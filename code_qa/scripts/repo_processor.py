@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Enhanced Repository Processor with Tree-Sitter Chunking
+Repository Processor with Tree-Sitter Chunking
 
-This enhanced version of the repository processor integrates tree-sitter based
-chunking for Python files, creating optimal chunks for RAG (Retrieval Augmented Generation).
+Repository processor integrates tree-sitter based
+chunking for Python files, creating optimal chunks for RAG.
 
 Features:
 - Tree-sitter based semantic chunking for Python files
