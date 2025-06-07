@@ -46,7 +46,7 @@ qa_pairs_dir: Path = "/path/to/your/qa/pairs"
 repo_url: str = "/path/to/your/repository"
 ```
 
-## Running the agent
+## Running the Agent
 
 The agent supports analyzing code from:
 - GitHub repositories
