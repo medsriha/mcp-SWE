@@ -26,7 +26,6 @@ source .venv/bin/activate  # On Unix/macOS
 3. Install the package and its dependencies:
 ```bash
 uv pip install .  # Install base dependencies
-uv pip install ".[dev]"  # Install development dependencies (optional)
 ```
 
 ## Configuration
