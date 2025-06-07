@@ -33,10 +33,8 @@ uv pip install ".[dev]"  # Install development dependencies (optional)
 
 Before running the evaluator or the agent, you need to set up the following:
 
-1. Set your OpenAI API key as an environment variable:
-```bash
-export OPENAI_API_KEY="your-api-key-here"
-```
+1. Set your OpenAI API key using one of these methods:
+   - Set as environment variable: OPENAI_API_KEY
 
 2. Configure the settings in `code_qa/config/settings.py`:
    - `qa_pairs_dir`: Directory containing Q/A markdown files for evaluation
@@ -51,7 +49,13 @@ repo_url: str = "/path/to/your/repository"
 
 ## Running the agent
 
-The agent comes with an integrated MCP server hosted locally that starts automatically when you run the CLI - no additional setup required! You can run the agent:
+The agent supports analyzing code from:
+- GitHub repositories
+- GitLab repositories
+- Any public HTTP repository URL
+- Local repositories
+
+You can run the agent:
 
 ```bash
 uv run code_qa/cli.py
@@ -72,19 +76,19 @@ Type 'quit' to exit.
 
 ## Running the QA Evaluator
 
-To run the evaluation script:
-
-```bash
-uv run code_qa/eval/qa_evaluator.py
-```
-
-The script will:
+The evaluation process includes:
 1. Load Q/A pairs from the specified directory
 2. Run evaluations using the CodeQAAgent
-3. Generate ROUGE scores for each response
+3. Generate comprehensive ROUGE scores (ROUGE-1, ROUGE-2, ROUGE-L)
 4. Create two output files:
-   - `evaluation_report.txt`: Detailed evaluation report
+   - `evaluation_report.txt`: Detailed evaluation report with timestamps
    - `evaluation_results.json`: Raw results in JSON format
+
+The evaluator provides:
+- Individual metrics for each Q/A pair
+- Aggregate metrics across all evaluations
+- Error handling and progress tracking
+- Detailed comparison between ground truth and agent responses
 
 ## Expected File Structure
 
